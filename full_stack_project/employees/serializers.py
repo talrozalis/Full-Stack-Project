@@ -9,7 +9,7 @@ class Employee_IDSerializer(serializers.ModelSerializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['id', 'url', 'first_name', 'last_name', 'employee_id', 'email_address', 'phone_number', 'hire_date', 'salary', 'title']
+        fields = ['id', 'url', 'first_name', 'last_name', 'employee_id', 'email_address', 'phone_number', 'hire_date', 'salary', 'title', 'slug']
 
 class TitleSerializer(serializers.ModelSerializer):
     class Meta:

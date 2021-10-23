@@ -9,5 +9,6 @@ router.register('manager', views.ManagerView),
 router.register('employee_id', views.Employee_IDView)
 
 urlpatterns = [
-path('employees-api', include(router.urls))
+path('employees-api', include(router.urls)),
+path('', views.homepage, name='home')
 ]
