@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>details</title>
 </head>
 <body>
+<h1>This is a test for the details page</h1>
+<div class="employee-name">
+<b>{{employee.first_name }} {{employee.last_name }}</b>  |  <i>{{ employee.title }}</i>
+</div>
 
+<div class="employee-photo">
+<img src="{{ employee.photo.url }}" height="565" width="400">
+</div>
+
+<div class="employee-details">
+
+
+<br>
+<b>Employee ID:</b> | <i>{{employee.employee_id}}</i>
+<br><br>
+<b>Email Address:</b> | <i>{{employee.email_address}}</i>
+<br><br>
+<b>Phone Number:</b> | <i>{{employee.phone_number}}</i>
+<br><br>
+<b>Hire Date:</b> | <i>{{employee.hire_date}}</i>
+<br><br>
+<b>Salary:</b> | <i>{{employee.salary}}</i>
+
+
+
+</div>
 </body>
 </html>

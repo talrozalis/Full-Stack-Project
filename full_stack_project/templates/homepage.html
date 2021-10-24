@@ -1,15 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Employees</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 <h1>This is a test</h1>
 <div class="employees">
     {% for employee in employees %}
-   <h2><a href="#">{{ employee.first_name }}</a></h2>
+<h2>{{ employee.first_name }}  {{ employee.last_name }} </h2>
+<a href="{% url 'details' slug=employee.slug %}"><img src="{{ employee.photo.url }}" height="350" width="234" style="vertical-align:bottom"></a> <br> <br>
     {% endfor %}
+
 </div>
 </body>
 </html>
+
