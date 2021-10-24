@@ -1,6 +1,9 @@
 from django.urls import path, include
 from . import views
 from rest_framework import routers
+app_name = 'employees'
+
+
 router = routers.DefaultRouter()
 router.register('employees', views.EmployeeView),
 router.register('title', views.TitleView),

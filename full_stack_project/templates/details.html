@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>details</title>
-</head>
-<body>
-<h1>This is a test for the details page</h1>
+{% extends 'base_layout.html' %}
+{% block content %}
 <div class="employee-name">
-<b>{{employee.first_name }} {{employee.last_name }}</b>  |  <i>{{ employee.title }}</i>
+    <h1>{{employee.first_name }} {{employee.last_name }} |  <i>{{ employee.title }}</i></h1><br>
 </div>
 
 <div class="employee-photo">
@@ -18,18 +12,18 @@
 
 
 <br>
-<b>Employee ID:</b> | <i>{{employee.employee_id}}</i>
+<b>Employee ID</b> | <i>{{employee.employee_id}}</i>
 <br><br>
-<b>Email Address:</b> | <i>{{employee.email_address}}</i>
+<b>Email Address</b> | <i>{{employee.email_address}}</i>
 <br><br>
-<b>Phone Number:</b> | <i>{{employee.phone_number}}</i>
+<b>Phone Number</b> | <i>{{employee.phone_number}}</i>
 <br><br>
-<b>Hire Date:</b> | <i>{{employee.hire_date}}</i>
+<b>Hire Date</b> | <i>{{employee.hire_date}}</i>
 <br><br>
-<b>Salary:</b> | <i>{{employee.salary}}</i>
+<b>Salary</b> | <i>{{employee.salary}}</i>
+<br><br>
 
 
 
 </div>
-</body>
-</html>
+{% endblock %}

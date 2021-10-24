@@ -1,10 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Employees</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+  <div class="wrapper">
 
+<h1><a href="{% url 'employees:home' %}"><img src="{% static 'Workdaylogo.png' %}" height="100" width="160"></a></h1>
+    {% block content %}
+    {% endblock %}
+  </div>
 </body>
 </html>
