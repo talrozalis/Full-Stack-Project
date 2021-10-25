@@ -84,9 +84,13 @@ print(last_dates_list)
 need_rise_list = []
 for emp in employees_data:
     if emp['hire_date'] in last_dates_list and emp['salary'] < average_salary:
-        need_rise_list.append(emp)
+        (need_rise_list.append(emp))
 print(need_rise_list)
 
-for employee_rise in need_rise_list:
-    with open('file.txt', 'w') as file:
-        file.write('employee_rise')
+final_result = json.dumps(need_rise_list, indent=2)
+print(final_result)
+
+with open('file.txt', 'w') as file:
+    file.write(final_result)
+
+
