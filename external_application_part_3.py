@@ -36,15 +36,57 @@ average_salary = total_salaries / number_of_salaies
 print(average_salary)
 
 import datetime
+# from datetime import datetime, date
+
 
 hire_dates_list = []
 
 for employee in employees_data:
-    hire_dates_list += (employee['first_name'], employee['hire_date'])
+    hire_dates_list += ([employee['hire_date']])
 
 print(hire_dates_list)
+
+new_dates_list = []
+format = "%Y-%m-%d"
+
+
+
+for dt in hire_dates_list:
+    new_dates_list.append(datetime.datetime.strptime(dt, format).date())
+print(new_dates_list)
+
+
+
 
 
 today_date = datetime.date.today()
 print(today_date)
 
+from datetime import datetime, timedelta
+
+year_ago = 365
+date_year_ago = today_date - timedelta(days=year_ago)
+print(date_year_ago)
+
+year_ago_list = []
+
+for date in new_dates_list:
+    if date < date_year_ago:
+        year_ago_list.append(date)
+print(year_ago_list)
+
+last_dates_list = []
+
+for dt in year_ago_list:
+    last_dates_list.append(dt.strftime(format))
+print(last_dates_list)
+
+need_rise_list = []
+for emp in employees_data:
+    if emp['hire_date'] in last_dates_list and emp['salary'] < average_salary:
+        need_rise_list.append(emp)
+print(need_rise_list)
+
+for employee_rise in need_rise_list:
+    with open('file.txt', 'w') as file:
+        file.write('employee_rise')
