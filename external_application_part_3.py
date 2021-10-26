@@ -1,8 +1,6 @@
 import json
 import requests
 
-import requests
-
 url = "http://127.0.0.1:8000/employees-apiemployees/"
 
 payload={}
@@ -36,8 +34,6 @@ average_salary = total_salaries / number_of_salaies
 print(average_salary)
 
 import datetime
-# from datetime import datetime, date
-
 
 hire_dates_list = []
 
@@ -49,20 +45,14 @@ print(hire_dates_list)
 new_dates_list = []
 format = "%Y-%m-%d"
 
-
-
 for dt in hire_dates_list:
     new_dates_list.append(datetime.datetime.strptime(dt, format).date())
 print(new_dates_list)
 
-
-
-
-
 today_date = datetime.date.today()
 print(today_date)
 
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 year_ago = 365
 date_year_ago = today_date - timedelta(days=year_ago)
@@ -84,7 +74,7 @@ print(last_dates_list)
 need_rise_list = []
 for emp in employees_data:
     if emp['hire_date'] in last_dates_list and emp['salary'] < average_salary:
-        (need_rise_list.append(emp))
+        need_rise_list.append(emp)
 print(need_rise_list)
 
 final_result = json.dumps(need_rise_list, indent=2)
@@ -92,5 +82,3 @@ print(final_result)
 
 with open('file.txt', 'w') as file:
     file.write(final_result)
-
-

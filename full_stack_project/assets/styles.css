@@ -4,15 +4,22 @@ background-color: #F6F6C7;
 
 .employees{
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 3-px;
 }
 
 .employees{
 padding: 10px;
-border: 1px solid #00dba0;
 position: relative;
 padding-bottom: 40px
+}
+
+.employee-container{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .employee-details {
